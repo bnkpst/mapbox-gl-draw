@@ -69,6 +69,8 @@ DrawLineString.onSetup = function(opts) {
 };
 
 DrawLineString.clickAnywhere = function(state, e) {
+
+  console.log('Hello');
   if (state.currentVertexPosition > 0 && isEventAtCoordinates(e, state.line.coordinates[state.currentVertexPosition - 1]) ||
       state.direction === 'backwards' && isEventAtCoordinates(e, state.line.coordinates[state.currentVertexPosition + 1])) {
     return this.changeMode(Constants.modes.SIMPLE_SELECT, { featureIds: [state.line.id] });
